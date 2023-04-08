@@ -1,0 +1,10 @@
+{
+  "projectConfig": {
+    "projectName": "dirtstack_site",
+    "frontend": "react",
+    "withStorybook": true,
+    "installPrettier": true,
+    "initializeGit": true,
+    "verboseLogs": false
+  }
+}
