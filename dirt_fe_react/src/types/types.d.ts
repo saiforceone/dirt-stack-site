@@ -11,3 +11,9 @@ export type DIRTStackPageComponent = {
    */
   layout?: React.ReactElement;
 };
+
+export type CardProps = {
+  icon?: React.ReactElement;
+  heading: string;
+  children: React.ReactNode;
+};
