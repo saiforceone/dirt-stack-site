@@ -49,7 +49,7 @@ const Index = (): React.ReactNode => {
   return (
     <div className="w-full bg-gradient-to-b from-[#02111B] to-[#30292F]">
       <ToastContainer />
-      <div className="flex flex-col container mx-auto md:max-w-5xl gap-y-8 text-center h-full p-4 ">
+      <div className="flex flex-col container mx-auto md:max-w-6xl gap-y-8 text-center h-full p-4 ">
         <TbShovel className="self-center text-white" size={100} />
         <h1 className="text-white text-center text-8xl font-heading">
           D.I.R.T STACK
@@ -64,7 +64,7 @@ const Index = (): React.ReactNode => {
           eact and smoothness of <span className="font-bold text-white">T</span>
           ailwind CSS.
         </p>
-        <div className="mx-auto flex flex-col gap-y-8 w-full sm:max-w-3xl">
+        <div className="mx-auto flex flex-col gap-y-8 w-full sm:max-w-4xl">
           <H2>Ready to get D.I.R.T-y?</H2>
           <Paragraph>
             Getting your project up and running is as easy as copying and
@@ -80,6 +80,19 @@ const Index = (): React.ReactNode => {
               size={ICON_SIZE}
             />
           </div>
+          <H3>Prerequisites</H3>
+          <Paragraph>
+            Before running the CLI, you'll just need to make sure that you have
+            the following installed{' '}
+            <span className="font-semibold text-white bg-slate-400 p-1 mr-1 rounded">
+              Python 3.8 or higher + Pipenv
+            </span>
+            &{' '}
+            <span className="font-semibold text-white bg-slate-400 p-1 mr-1 rounded">
+              NodeJS 16 or higher
+            </span>
+          </Paragraph>
+
           <H2>About the D.I.R.T Stack</H2>
           <Paragraph>
             The D.I.R.T Stack was created to simplify the process of scaffolding
@@ -99,22 +112,35 @@ const Index = (): React.ReactNode => {
               icon={<SiDjango className="text-white" size={40} />}
               heading="Django"
             >
-              <Paragraph>Django</Paragraph>
+              <Paragraph>
+                One of the best ways to build modern fullstack web applications
+                complete with authentication built-in and its own ORM.
+              </Paragraph>
             </Card>
             <Card icon={InertiaIcon} heading="">
-              <Paragraph>Inertia</Paragraph>
+              <Paragraph>
+                Described as the new modern monolith, Inertia leverages
+                tradition server-side routing while using modern web application
+                development
+              </Paragraph>
             </Card>
             <Card
               icon={<DiReact className="text-white" size={40} />}
-              heading="ReactJS"
+              heading="React"
             >
-              <Paragraph>ReactJS</Paragraph>
+              <Paragraph>
+                UI library for building modern web and native user interfaces
+                using reusable pieces more affectionately called Components.
+              </Paragraph>
             </Card>
             <Card
               icon={<SiTailwindcss className="text-white" size={40} />}
               heading="TailwindCSS"
             >
-              <Paragraph>Tailwind CSS</Paragraph>
+              <Paragraph>
+                A utility-first CSS framework that helps you quickly and easily
+                craft beautiful and responsive web experiences.
+              </Paragraph>
             </Card>
           </div>
           <H3>
@@ -125,19 +151,28 @@ const Index = (): React.ReactNode => {
               icon={<SiTypescript className="text-white" size={40} />}
               heading="Typescript"
             >
-              <Paragraph>Typescript</Paragraph>
+              <Paragraph>
+                For modern web app development, it just makes sense to use
+                Typescript.
+              </Paragraph>
             </Card>
             <Card
               icon={<SiVite className="text-white" size={40} />}
               heading="Vite"
             >
-              <Paragraph>Vite</Paragraph>
+              <Paragraph>
+                We believe that Vite is currently the best development server
+                for modern web app development
+              </Paragraph>
             </Card>
             <Card
               icon={<SiStorybook className="text-white" size={40} />}
               heading="Storybook"
             >
-              <Paragraph>Storybook</Paragraph>
+              <Paragraph>
+                Design, implement & test your app's UI before getting deep into
+                feature implementation
+              </Paragraph>
             </Card>
           </div>
         </div>
@@ -149,14 +184,14 @@ const Index = (): React.ReactNode => {
         </Paragraph>
         <div className="flex self-center justify-between w-full text-white">
           <a
-            className="flex text-white hover:text-white items-center hover:text-white gap-x-2"
+            className="flex text-white hover:text-white items-center gap-x-2"
             target="_blank"
             href="https://github.com/saiforceone/dirt-cli"
           >
             <FaGithubAlt size={32} /> <span>Git D.I.R.T-y</span>
           </a>
           <a
-            className="flex text-white hover:text-white items-center hover:text-white gap-x-2"
+            className="flex text-white hover:text-white items-center gap-x-2"
             target="_blank"
             href="https://discord.gg/sY3a5VN3y9"
           >
