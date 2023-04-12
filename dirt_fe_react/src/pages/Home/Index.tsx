@@ -13,6 +13,8 @@ import {
   SiVite,
   SiTypescript,
   TbShovel,
+  SiPython,
+  SiNodedotjs, SiWindows, SiApple, SiLinux,
 } from 'react-icons/all';
 import {
   H2,
@@ -20,13 +22,15 @@ import {
   Paragraph,
 } from '../../components/shared/Typography/Typography';
 import { Card } from '../../components/shared/Card/Card';
+import { Label } from '../../components/shared/Label/Label';
+import { Badge } from '../../components/shared/Badge/Badge';
 
 const ICON_SIZE = 24;
 const InertiaIcon = (
   <svg
     className="block fill-current text-white"
     viewBox="0 0 275.3 50.5"
-    style={{ height: '25px' }}
+    style={{ height: '20px' }}
   >
     <path d="M231.2 16.1h-17.8l17.2 17.2-17.2 17.2h17.8l17.2-17.2z"></path>
     <path d="M258.1 16.1h-17.8l17.2 17.2-17.2 17.2h17.8l17.2-17.2z"></path>
@@ -34,6 +38,7 @@ const InertiaIcon = (
   </svg>
 );
 
+const CARD_ICON_SIZE = 32;
 const Index = (): React.ReactNode => {
   const copyToClipboard = useCallback(() => {
     if ('clipboard' in navigator) {
@@ -83,15 +88,14 @@ const Index = (): React.ReactNode => {
           <H3>Prerequisites</H3>
           <Paragraph>
             Before running the CLI, you'll just need to make sure that you have
-            the following installed{' '}
-            <span className="font-semibold text-white bg-slate-400 p-1 mr-1 rounded">
-              Python 3.8 or higher + Pipenv
-            </span>
-            &{' '}
-            <span className="font-semibold text-white bg-slate-400 p-1 mr-1 rounded">
-              NodeJS 16 or higher
-            </span>
+            the following installed:
           </Paragraph>
+
+          <ul className="max-w-2xl list-none mx-auto">
+            <li><Label iconElement={<SiPython className="text-green-600" size={16} />} link="https://www.python.org/downloads/" labelText="Python 3.8 or higher" /></li>
+            <li><Label iconElement={<SiPython className="text-green-600" size={16} />} link="https://pipenv.pypa.io/en/latest/" labelText="Pipenv (latest)" /></li>
+            <li><Label iconElement={<SiNodedotjs className="text-green-600" size={16} />} link={"https://nodejs.org/"} labelText="NodeJS 16 or higher" /></li>
+          </ul>
 
           <H2>About the D.I.R.T Stack</H2>
           <Paragraph>
@@ -109,7 +113,7 @@ const Index = (): React.ReactNode => {
           </H3>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
             <Card
-              icon={<SiDjango className="text-white" size={40} />}
+              icon={<SiDjango className="text-white" size={CARD_ICON_SIZE} />}
               heading="Django"
             >
               <Paragraph>
@@ -125,7 +129,7 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<DiReact className="text-white" size={40} />}
+              icon={<DiReact className="text-white" size={CARD_ICON_SIZE} />}
               heading="React"
             >
               <Paragraph>
@@ -134,7 +138,7 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<SiTailwindcss className="text-white" size={40} />}
+              icon={<SiTailwindcss className="text-white" size={CARD_ICON_SIZE} />}
               heading="TailwindCSS"
             >
               <Paragraph>
@@ -148,7 +152,7 @@ const Index = (): React.ReactNode => {
           </H3>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Card
-              icon={<SiTypescript className="text-white" size={40} />}
+              icon={<SiTypescript className="text-white" size={CARD_ICON_SIZE} />}
               heading="Typescript"
             >
               <Paragraph>
@@ -157,7 +161,7 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<SiVite className="text-white" size={40} />}
+              icon={<SiVite className="text-white" size={CARD_ICON_SIZE} />}
               heading="Vite"
             >
               <Paragraph>
@@ -166,7 +170,7 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<SiStorybook className="text-white" size={40} />}
+              icon={<SiStorybook className="text-white" size={CARD_ICON_SIZE} />}
               heading="Storybook"
             >
               <Paragraph>
@@ -175,6 +179,21 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
           </div>
+          <H2>Supported Platforms</H2>
+          <Paragraph>
+            We believe that no matter the platform, you should be able to use the <span className="font-semibold">D.I.R.T Stack</span> to create awesome fullstack web applications.
+          </Paragraph>
+          <ul className="max-w-2xl list-none mx-auto">
+            <li>
+              <Badge iconElement={<SiWindows />} text="Windows" />
+            </li>
+            <li>
+              <Badge iconElement={<SiApple />} text="MacOS" />
+            </li>
+            <li>
+              <Badge iconElement={<SiLinux />} text="Linux" />
+            </li>
+          </ul>
         </div>
 
         <H2>Get Connected</H2>
