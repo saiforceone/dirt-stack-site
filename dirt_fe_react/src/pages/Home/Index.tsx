@@ -16,6 +16,7 @@ import {
   SiPython,
   SiNodedotjs, SiWindows, SiApple, SiLinux,
 } from 'react-icons/all';
+
 import {
   H2,
   H3,
@@ -69,7 +70,7 @@ const Index = (): React.ReactNode => {
           eact and smoothness of <span className="font-bold text-white">T</span>
           ailwind CSS.
         </p>
-        <div className="mx-auto flex flex-col gap-y-8 w-full sm:max-w-4xl">
+        <div className="mx-auto flex flex-col gap-y-8 w-full sm:max-w-6xl">
           <H2>Ready to get D.I.R.T-y?</H2>
           <Paragraph>
             Getting your project up and running is as easy as copying and
