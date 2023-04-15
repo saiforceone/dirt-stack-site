@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "dirtstack_site/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dirtstack_site/wsgi.py"
+    }
+  ]
+}
