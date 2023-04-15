@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dirtstack_site.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dirt_settings.prod')
 
 application = get_wsgi_application()
 app = application
