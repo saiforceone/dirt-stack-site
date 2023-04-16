@@ -1,9 +1,7 @@
 # vercel build script for D.I.R.T Stack Projects
-# Activate shell
-pipenv shell
 
 # install dependencies
-pipenv install
+pip install -r requirements.txt
 
 # collect static files
 python3.9 manage.py collectstatic
