@@ -3,6 +3,13 @@
     {
       "src": "dirtstack_site/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "build_vercel.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles"
+      }
     }
   ],
   "routes": [
