@@ -11,9 +11,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
         <!-- css -->
         <link rel="stylesheet" href="{% static 'dist/css/app.css' %} "/>
+        {% if debug %}
         <!-- vite hmr -->
         {% vite_hmr_client %}
         {% vite_asset 'src/main.tsx' %}
+        {% else %}
+            <script type='application/javascript' src="{% static 'dist/js/main.js' %}"></script>
+        {% endif %}
         <title>D.I.R.T Stack - Django Inertia React Tailwind CSS</title>
     </head>
     <body>
