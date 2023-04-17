@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { useCallback } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { useCallback, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   DiReact,
   FaDiscord,
   FaCopy,
+  FaCheckCircle,
   FaGithubAlt,
   SiDjango,
   SiStorybook,
@@ -14,7 +14,10 @@ import {
   SiTypescript,
   TbShovel,
   SiPython,
-  SiNodedotjs, SiWindows, SiApple, SiLinux,
+  SiNodedotjs,
+  SiWindows,
+  SiApple,
+  SiLinux,
 } from 'react-icons/all';
 
 import {
@@ -41,20 +44,22 @@ const InertiaIcon = (
 
 const CARD_ICON_SIZE = 32;
 const Index = (): React.ReactNode => {
+  const [showCopyIcon, setShowCopyIcon] = useState(true);
   const copyToClipboard = useCallback(() => {
+    setShowCopyIcon(false);
     if ('clipboard' in navigator) {
       return navigator.clipboard
         .writeText('npx @saiforceone/dirt-cli@latest')
         .then(() => {
-          toast('Copied to clipboard');
+          setShowCopyIcon(true);
         });
     } else {
       document.execCommand('copy', true, 'npx @saiforceone/dirt-cli@latest');
+      setShowCopyIcon(true);
     }
   }, []);
   return (
     <div className="w-full bg-gradient-to-b from-[#02111B] to-[#30292F]">
-      <ToastContainer />
       <div className="flex flex-col container mx-auto md:max-w-6xl gap-y-8 text-center h-full p-4 ">
         <TbShovel className="self-center text-white" size={100} />
         <h1 className="text-white text-center text-8xl font-heading">
@@ -80,11 +85,16 @@ const Index = (): React.ReactNode => {
             <span className="text-lg font-semibold">
               npx @saiforceone/dirt-cli@latest
             </span>
-            <FaCopy
-              className="cursor-pointer hover:text-slate-50"
-              onClick={copyToClipboard}
-              size={ICON_SIZE}
-            />
+
+            {showCopyIcon ? (
+              <FaCopy
+                className="cursor-pointer hover:text-slate-50"
+                onClick={copyToClipboard}
+                size={ICON_SIZE}
+              />
+            ) : (
+              <FaCheckCircle size={ICON_SIZE} />
+            )}
           </div>
           <H3>Prerequisites</H3>
           <Paragraph>
@@ -93,9 +103,29 @@ const Index = (): React.ReactNode => {
           </Paragraph>
 
           <ul className="max-w-2xl list-none mx-auto">
-            <li><Label iconElement={<SiPython className="text-green-600" size={16} />} link="https://www.python.org/downloads/" labelText="Python 3.8 or higher" /></li>
-            <li><Label iconElement={<SiPython className="text-green-600" size={16} />} link="https://pipenv.pypa.io/en/latest/" labelText="Pipenv (latest)" /></li>
-            <li><Label iconElement={<SiNodedotjs className="text-green-600" size={16} />} link={"https://nodejs.org/"} labelText="NodeJS 16 or higher" /></li>
+            <li>
+              <Label
+                iconElement={<SiPython className="text-green-600" size={16} />}
+                link="https://www.python.org/downloads/"
+                labelText="Python 3.8 or higher"
+              />
+            </li>
+            <li>
+              <Label
+                iconElement={<SiPython className="text-green-600" size={16} />}
+                link="https://pipenv.pypa.io/en/latest/"
+                labelText="Pipenv (latest)"
+              />
+            </li>
+            <li>
+              <Label
+                iconElement={
+                  <SiNodedotjs className="text-green-600" size={16} />
+                }
+                link={'https://nodejs.org/'}
+                labelText="NodeJS 16 or higher"
+              />
+            </li>
           </ul>
 
           <H2>About the D.I.R.T Stack</H2>
@@ -139,7 +169,9 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<SiTailwindcss className="text-white" size={CARD_ICON_SIZE} />}
+              icon={
+                <SiTailwindcss className="text-white" size={CARD_ICON_SIZE} />
+              }
               heading="TailwindCSS"
             >
               <Paragraph>
@@ -153,7 +185,9 @@ const Index = (): React.ReactNode => {
           </H3>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Card
-              icon={<SiTypescript className="text-white" size={CARD_ICON_SIZE} />}
+              icon={
+                <SiTypescript className="text-white" size={CARD_ICON_SIZE} />
+              }
               heading="Typescript"
             >
               <Paragraph>
@@ -171,7 +205,9 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<SiStorybook className="text-white" size={CARD_ICON_SIZE} />}
+              icon={
+                <SiStorybook className="text-white" size={CARD_ICON_SIZE} />
+              }
               heading="Storybook"
             >
               <Paragraph>
@@ -182,7 +218,9 @@ const Index = (): React.ReactNode => {
           </div>
           <H2>Supported Platforms</H2>
           <Paragraph>
-            We believe that no matter the platform, you should be able to use the <span className="font-semibold">D.I.R.T Stack</span> to create awesome fullstack web applications.
+            We believe that no matter the platform, you should be able to use
+            the <span className="font-semibold">D.I.R.T Stack</span> to create
+            awesome fullstack web applications.
           </Paragraph>
           <ul className="max-w-2xl list-none mx-auto">
             <li>
