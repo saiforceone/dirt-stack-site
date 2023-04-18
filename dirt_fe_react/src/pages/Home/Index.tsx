@@ -256,6 +256,12 @@ const Index = (): React.ReactNode => {
             <FaDiscord size={32} /> Peanut Cart Express
           </a>
         </div>
+        <div className="p-2 flex flex-col items-center">
+          <Badge
+            iconElement={<TbShovel className="text-white" size={24} />}
+            text="Made with the D.I.R.T Stack"
+          />
+        </div>
       </div>
     </div>
   );

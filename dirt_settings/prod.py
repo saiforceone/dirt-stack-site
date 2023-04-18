@@ -10,7 +10,7 @@ print('Loaded with production configuration...')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
 
 # By default, in production, DEBUG is to be False
-DEBUG = False
+DEBUG = True
 
 # Generate a secret key, uncomment the line below and then paste it Note: if you have something like openssl
 # installed, you can generate a string for your secret key by doing the following openssl rand -base64 <length> where
