@@ -18,6 +18,7 @@ import {
   SiWindows,
   SiApple,
   SiLinux,
+  SiNpm,
 } from 'react-icons/all';
 
 import {
@@ -28,13 +29,14 @@ import {
 import { Card } from '../../components/shared/Card/Card';
 import { Label } from '../../components/shared/Label/Label';
 import { Badge } from '../../components/shared/Badge/Badge';
+import { FooterLink } from '../../components/shared/FooterLink/FooterLink';
 
 const ICON_SIZE = 24;
 const InertiaIcon = (
   <svg
-    className="block fill-current text-white"
+    className="block fill-current"
     viewBox="0 0 275.3 50.5"
-    style={{ height: '20px' }}
+    style={{ height: '20px', marginTop: '0.25rem' }}
   >
     <path d="M231.2 16.1h-17.8l17.2 17.2-17.2 17.2h17.8l17.2-17.2z"></path>
     <path d="M258.1 16.1h-17.8l17.2 17.2-17.2 17.2h17.8l17.2-17.2z"></path>
@@ -81,22 +83,7 @@ const Index = (): React.ReactNode => {
             Getting your project up and running is as easy as copying and
             pasting the command below and answering a few prompts
           </Paragraph>
-          <div className="flex mx-auto w-[400px] px-2 py-4 bg-slate-800 border-[#30292F] border-2 text-white rounded items-center justify-between">
-            <span className="text-lg font-semibold">
-              npx @saiforceone/dirt-cli@latest
-            </span>
-
-            {showCopyIcon ? (
-              <FaCopy
-                className="cursor-pointer hover:text-slate-50"
-                onClick={copyToClipboard}
-                size={ICON_SIZE}
-              />
-            ) : (
-              <FaCheckCircle size={ICON_SIZE} />
-            )}
-          </div>
-          <H3>Prerequisites</H3>
+          <H3>Before you dig in...</H3>
           <Paragraph>
             Before running the CLI, you'll just need to make sure that you have
             the following installed:
@@ -127,6 +114,22 @@ const Index = (): React.ReactNode => {
               />
             </li>
           </ul>
+          <H3>Now, it's time to get D.I.R.T-y</H3>
+          <div className="flex mx-auto gap-x-2 md:gap-x-4 px-2 py-4 bg-slate-800 border-[#30292F] border-2 text-white rounded items-center justify-between">
+            <span className="text-sm md:text-lg font-semibold">
+              npx @saiforceone/dirt-cli@latest
+            </span>
+
+            {showCopyIcon ? (
+              <FaCopy
+                className="cursor-pointer hover:text-slate-50"
+                onClick={copyToClipboard}
+                size={ICON_SIZE}
+              />
+            ) : (
+              <FaCheckCircle size={ICON_SIZE} />
+            )}
+          </div>
 
           <H2>About the D.I.R.T Stack</H2>
           <Paragraph>
@@ -144,7 +147,8 @@ const Index = (): React.ReactNode => {
           </H3>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
             <Card
-              icon={<SiDjango className="text-white" size={CARD_ICON_SIZE} />}
+              icon={<SiDjango size={CARD_ICON_SIZE} />}
+              link="https://djangoproject.com/"
               heading="Django"
             >
               <Paragraph>
@@ -152,7 +156,7 @@ const Index = (): React.ReactNode => {
                 complete with authentication built-in and its own ORM.
               </Paragraph>
             </Card>
-            <Card icon={InertiaIcon} heading="">
+            <Card icon={InertiaIcon} heading="" link="https://inertiajs.com/">
               <Paragraph>
                 Described as the new modern monolith, Inertia leverages
                 tradition server-side routing while using modern web application
@@ -160,7 +164,8 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<DiReact className="text-white" size={CARD_ICON_SIZE} />}
+              icon={<DiReact size={CARD_ICON_SIZE} />}
+              link="https://react.dev/"
               heading="React"
             >
               <Paragraph>
@@ -170,9 +175,10 @@ const Index = (): React.ReactNode => {
             </Card>
             <Card
               icon={
-                <SiTailwindcss className="text-white" size={CARD_ICON_SIZE} />
+                <SiTailwindcss size={CARD_ICON_SIZE} />
               }
               heading="TailwindCSS"
+              link="https://tailwindcss.com/"
             >
               <Paragraph>
                 A utility-first CSS framework that helps you quickly and easily
@@ -186,9 +192,10 @@ const Index = (): React.ReactNode => {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Card
               icon={
-                <SiTypescript className="text-white" size={CARD_ICON_SIZE} />
+                <SiTypescript size={CARD_ICON_SIZE} />
               }
               heading="Typescript"
+              link="https://www.typescriptlang.org/"
             >
               <Paragraph>
                 For modern web app development, it just makes sense to use
@@ -196,8 +203,9 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={<SiVite className="text-white" size={CARD_ICON_SIZE} />}
+              icon={<SiVite size={CARD_ICON_SIZE} />}
               heading="Vite"
+              link="https://vitejs.dev/"
             >
               <Paragraph>
                 We believe that Vite is currently the best development server
@@ -206,9 +214,10 @@ const Index = (): React.ReactNode => {
             </Card>
             <Card
               icon={
-                <SiStorybook className="text-white" size={CARD_ICON_SIZE} />
+                <SiStorybook size={CARD_ICON_SIZE} />
               }
               heading="Storybook"
+              link="https://storybook.js.org/"
             >
               <Paragraph>
                 Design, implement & test your app's UI before getting deep into
@@ -219,7 +228,7 @@ const Index = (): React.ReactNode => {
           <H2>Supported Platforms</H2>
           <Paragraph>
             We believe that no matter the platform, you should be able to use
-            the <span className="font-semibold">D.I.R.T Stack</span> to create
+            the <span className="font-semibold">D.I.R.T. Stack</span> to create
             awesome fullstack web applications.
           </Paragraph>
           <ul className="max-w-2xl list-none mx-auto">
@@ -237,29 +246,18 @@ const Index = (): React.ReactNode => {
 
         <H2>Get Connected</H2>
         <Paragraph>
-          Want to get more information about the DIRT Stack or have some ideas
+          Want to get more information about the D.I.R.T. Stack or have some ideas
           to share, get in contact with us.
         </Paragraph>
         <div className="flex self-center justify-between w-full text-white">
-          <a
-            className="flex text-white hover:text-white items-center gap-x-2"
-            target="_blank"
-            href="https://github.com/saiforceone/dirt-cli"
-          >
-            <FaGithubAlt size={32} /> <span>Git D.I.R.T-y</span>
-          </a>
-          <a
-            className="flex text-white hover:text-white items-center gap-x-2"
-            target="_blank"
-            href="https://discord.gg/sY3a5VN3y9"
-          >
-            <FaDiscord size={32} /> Peanut Cart Express
-          </a>
+          <FooterLink link="https://github.com/saiforceone/dirt-cli" icon={<FaGithubAlt size={32} />} title="Git D.I.R.T-y" />
+          <FooterLink link="https://discord.gg/sY3a5VN3y9" icon={<FaDiscord size={32} />} title="Peanut Cart Express" />
+          <FooterLink link="https://www.npmjs.com/package/@saiforceone/dirt-cli" icon={<SiNpm size={32} />} title="D.I.R.T. CLI" />
         </div>
-        <div className="p-2 flex flex-col items-center">
+        <div className="p-2 flex flex-col bg-slate-700 w-fit self-center rounded items-center">
           <Badge
             iconElement={<TbShovel className="text-white" size={24} />}
-            text="Made with the D.I.R.T Stack"
+            text="Made with D.I.R.T."
           />
         </div>
       </div>

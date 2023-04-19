@@ -292,3 +292,4 @@ dirt_settings/dev.py
 dirt_settings/production.py
 dirt_fe_react/dist
 staticfiles
+.idea

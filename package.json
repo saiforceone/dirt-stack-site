@@ -10,7 +10,7 @@
     "tailwind-dev": "tailwindcss -i ./static/css/main.css -o ./static/dist/css/app.css --watch",
     "tailwind": "tailwindcss -i ./static/css/main.css -o ./static/dist/css/app.css",
     "dirt-fe": "concurrently -c \"auto\" --names \"tailwind-css,dirt-frontend\" \"npm run tailwind-dev\" \"npm run vite-dev\"",
-    "dirt-dev": "concurrently -c \"auto\" --names \"dirt-dev-server,tailwind-css,dirt-frontend\" \"PYTHONUNBUFFERED=1 exec ./manage.py runserver\" \"npm run tailwind-dev\" \"npm run vite-dev\"",
+    "dirt-dev": "concurrently -c \"auto\" --names \"dirt-dev-server,tailwind-css,dirt-frontend\" \"PYTHONUNBUFFERED=1 exec ./manage.py runserver --settings=dirt_settings.dev\" \"npm run tailwind-dev\" \"npm run vite-dev\"",
     "prestorybook": "tailwindcss -i ./static/css/main.css -o ./static/dist/css/app.css",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "storybook-build": "build-storybook"
