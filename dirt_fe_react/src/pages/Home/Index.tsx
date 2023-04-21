@@ -114,7 +114,7 @@ const Index = (): React.ReactNode => {
               />
             </li>
           </ul>
-          <H3>Now, it's time to get D.I.R.T-y</H3>
+          <H3>Now, it's time to get D.I.R.T-y!</H3>
           <div className="flex mx-auto gap-x-2 md:gap-x-4 px-2 py-4 bg-slate-800 border-[#30292F] border-2 text-white rounded items-center justify-between">
             <span className="text-sm md:text-lg font-semibold">
               npx @saiforceone/dirt-cli@latest
@@ -153,14 +153,15 @@ const Index = (): React.ReactNode => {
             >
               <Paragraph>
                 One of the best ways to build modern fullstack web applications
-                complete with authentication built-in and its own ORM.
+                complete with authentication built-in, its own ORM and many
+                awesome addons.
               </Paragraph>
             </Card>
             <Card icon={InertiaIcon} heading="" link="https://inertiajs.com/">
               <Paragraph>
                 Described as the new modern monolith, Inertia leverages
                 tradition server-side routing while using modern web application
-                development
+                development techniques.
               </Paragraph>
             </Card>
             <Card
@@ -174,9 +175,7 @@ const Index = (): React.ReactNode => {
               </Paragraph>
             </Card>
             <Card
-              icon={
-                <SiTailwindcss size={CARD_ICON_SIZE} />
-              }
+              icon={<SiTailwindcss size={CARD_ICON_SIZE} />}
               heading="TailwindCSS"
               link="https://tailwindcss.com/"
             >
@@ -191,9 +190,7 @@ const Index = (): React.ReactNode => {
           </H3>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <Card
-              icon={
-                <SiTypescript size={CARD_ICON_SIZE} />
-              }
+              icon={<SiTypescript size={CARD_ICON_SIZE} />}
               heading="Typescript"
               link="https://www.typescriptlang.org/"
             >
@@ -209,13 +206,11 @@ const Index = (): React.ReactNode => {
             >
               <Paragraph>
                 We believe that Vite is currently the best development server
-                for modern web app development
+                for modern web app development.
               </Paragraph>
             </Card>
             <Card
-              icon={
-                <SiStorybook size={CARD_ICON_SIZE} />
-              }
+              icon={<SiStorybook size={CARD_ICON_SIZE} />}
               heading="Storybook"
               link="https://storybook.js.org/"
             >
@@ -246,13 +241,25 @@ const Index = (): React.ReactNode => {
 
         <H2>Get Connected</H2>
         <Paragraph>
-          Want to get more information about the D.I.R.T. Stack or have some ideas
-          to share, get in contact with us.
+          Want to get more information about the D.I.R.T. Stack or have some
+          ideas to share, get in contact with us.
         </Paragraph>
-        <div className="flex self-center justify-between w-full text-white">
-          <FooterLink link="https://github.com/saiforceone/dirt-cli" icon={<FaGithubAlt size={32} />} title="Git D.I.R.T-y" />
-          <FooterLink link="https://discord.gg/sY3a5VN3y9" icon={<FaDiscord size={32} />} title="Peanut Cart Express" />
-          <FooterLink link="https://www.npmjs.com/package/@saiforceone/dirt-cli" icon={<SiNpm size={32} />} title="D.I.R.T. CLI" />
+        <div className="flex flex-col gap-y-2 sm:flex-row self-center sm:justify-between sm:w-full text-white">
+          <FooterLink
+            link="https://github.com/saiforceone/dirt-cli"
+            icon={<FaGithubAlt size={32} />}
+            title="Git D.I.R.T-y"
+          />
+          <FooterLink
+            link="https://discord.gg/sY3a5VN3y9"
+            icon={<FaDiscord size={32} />}
+            title="Peanut Cart Express"
+          />
+          <FooterLink
+            link="https://www.npmjs.com/package/@saiforceone/dirt-cli"
+            icon={<SiNpm size={32} />}
+            title="D.I.R.T. CLI"
+          />
         </div>
         <div className="p-2 flex flex-col bg-slate-700 w-fit self-center rounded items-center">
           <Badge
