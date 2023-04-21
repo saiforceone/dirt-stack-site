@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django_vite",
     "inertia",
     # our apps
+    'dirtstack_site',
 ]
 
 MIDDLEWARE = [

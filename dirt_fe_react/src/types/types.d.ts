@@ -13,7 +13,14 @@ export type DIRTStackPageComponent = {
 };
 
 export type CardProps = {
-  icon?: React.ReactElement;
-  heading: string;
-  children: React.ReactNode;
+  readonly icon?: React.ReactElement;
+  readonly heading: string;
+  readonly link: string;
+  readonly children: React.ReactNode;
 };
+
+export interface FooterLinkProps {
+  readonly link: string;
+  readonly icon: React.ReactElement;
+  readonly title: string;
+}
