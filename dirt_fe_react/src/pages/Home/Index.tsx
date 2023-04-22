@@ -160,8 +160,8 @@ const Index = (): React.ReactNode => {
             <Card icon={InertiaIcon} heading="" link="https://inertiajs.com/">
               <Paragraph>
                 Described as the new modern monolith, Inertia leverages
-                tradition server-side routing while using modern web application
-                development techniques.
+                traditional server-side routing while using modern web
+                application development techniques.
               </Paragraph>
             </Card>
             <Card
