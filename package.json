@@ -11,13 +11,12 @@
     "tailwind": "tailwindcss -i ./static/css/main.css -o ./static/dist/css/app.css",
     "dirt-fe": "concurrently -c \"auto\" --names \"tailwind-css,dirt-frontend\" \"npm run tailwind-dev\" \"npm run vite-dev\"",
     "dirt-dev": "concurrently -c \"auto\" --names \"dirt-dev-server,tailwind-css,dirt-frontend\" \"PYTHONUNBUFFERED=1 exec ./manage.py runserver --settings=dirt_settings.dev\" \"npm run tailwind-dev\" \"npm run vite-dev\"",
-    "run-prod-local": "npm-run-all --serial vite-build tailwind  ",
-    "build-assets": "node dirt-build-assets.mjs",
+    "dirt-prod-local": "concurrently -c \"auto\" --names \"tailwind-css,dirt-frontend,dirt-prod-server\" \"npm run tailwind\" \"npm run vite-build\" \"PYTHONUNBUFFERED=1 exec ./manage.py runserver --settings=dirt_settings.prod\" ",
+    "build-assets": "node dirt-build-assets.js",
     "prestorybook": "tailwindcss -i ./static/css/main.css -o ./static/dist/css/app.css",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "storybook-build": "build-storybook"
   },
-  "type": "module",
   "keywords": [
     "django",
     "dirt-cli",
@@ -40,6 +39,7 @@
     "@storybook/client-logger": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@types/figlet": "^1.5.5",
+    "@types/node": "^18.16.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
@@ -53,6 +53,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.2.4",
+    "terser": "^5.17.1",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
@@ -60,6 +61,7 @@
     "vite-tsconfig-paths": "^4.0.5"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.0",
     "react-icons": "^4.7.1",
     "react-toastify": "^9.1.2"
   }

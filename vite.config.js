@@ -27,6 +27,7 @@ module.exports = {
     outDir: resolve('./static/dist/js'),
     assetsDir: '',
     manifest: true,
+    minify: 'terser',
     emptyOutDir: true,
     target: 'es2015',
     rollupOptions: {
