@@ -20,6 +20,7 @@ import {
   SiLinux,
   SiNpm,
 } from 'react-icons/all';
+import { Analytics } from '@vercel/analytics/react';
 
 import {
   H2,
@@ -62,6 +63,7 @@ const Index = (): React.ReactNode => {
   }, []);
   return (
     <div className="w-full bg-gradient-to-b from-[#02111B] to-[#30292F]">
+      <Analytics />
       <div className="flex flex-col container mx-auto md:max-w-6xl gap-y-8 text-center h-full p-4 ">
         <TbShovel className="self-center text-white" size={100} />
         <h1 className="text-white text-center text-8xl font-heading">
