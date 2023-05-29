@@ -19,6 +19,7 @@ import {
   SiApple,
   SiLinux,
   SiNpm,
+  SiVuedotjs,
 } from 'react-icons/all';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -45,7 +46,9 @@ const InertiaIcon = (
   </svg>
 );
 
-const CARD_ICON_SIZE = 32;
+const ICON_SIZE_32 = 32;
+const CARD_ICON_SIZE = ICON_SIZE_32;
+const ICON_SIZE_64 = 64;
 const Index = (): React.ReactNode => {
   const [showCopyIcon, setShowCopyIcon] = useState(true);
   const copyToClipboard = useCallback(() => {
@@ -74,9 +77,10 @@ const Index = (): React.ReactNode => {
           D.I.R.T combines the power of{' '}
           <span className="font-bold text-white">D</span>
           jango, <span className="font-bold text-white">I</span>
-          nertiaJs, Reactivity of{' '}
-          <span className="font-bold text-white">R</span>
-          eact and smoothness of <span className="font-bold text-white">T</span>
+          nertiaJs, <span className="font-bold text-white">R</span>eactive UI of{' '}
+          <span className="underline text-white">React</span> /{' '}
+          <span className="underline text-white">VueJS</span> and smoothness of{' '}
+          <span className="font-bold text-white">T</span>
           ailwind CSS.
         </p>
         <div className="mx-auto flex flex-col gap-y-8 w-full sm:max-w-6xl">
@@ -139,15 +143,14 @@ const Index = (): React.ReactNode => {
             Django projects that utilized libraries and frameworks like React or
             VueJS on the frontend. By taking this approach, you can leverage the
             skills you already have with the Django framework as well{' '}
-            <span className="font-semibold text-white">React</span> /{' '}
-            <span className="font-semibold text-slate-400">VueJS</span> /{' '}
-            <span className="font-semibold text-slate-400">Svelte</span>.
+            <span className="font-semibold text-white">React</span> or{' '}
+            <span className="font-semibold text-white">VueJS</span>
           </Paragraph>
           <H3>
             <span className="font-semibold text-white">D.I.R.T</span>, truly
             down to earth and built on a solid foundation with
           </H3>
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
             <Card
               icon={<SiDjango size={CARD_ICON_SIZE} />}
               link="https://djangoproject.com/"
@@ -166,16 +169,7 @@ const Index = (): React.ReactNode => {
                 application development techniques.
               </Paragraph>
             </Card>
-            <Card
-              icon={<DiReact size={CARD_ICON_SIZE} />}
-              link="https://react.dev/"
-              heading="React"
-            >
-              <Paragraph>
-                UI library for building modern web and native user interfaces
-                using reusable pieces more affectionately called Components.
-              </Paragraph>
-            </Card>
+
             <Card
               icon={<SiTailwindcss size={CARD_ICON_SIZE} />}
               heading="TailwindCSS"
@@ -184,6 +178,30 @@ const Index = (): React.ReactNode => {
               <Paragraph>
                 A utility-first CSS framework that helps you quickly and easily
                 craft beautiful and responsive web experiences.
+              </Paragraph>
+            </Card>
+          </div>
+          <H3>Your choice of frontend</H3>
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+            <Card
+              icon={<DiReact size={CARD_ICON_SIZE} />}
+              link="https://react.dev/"
+              heading="React"
+            >
+              <Paragraph>
+                A well-documented and supported UI library for building modern
+                web and native user interfaces using reusable called Components.
+              </Paragraph>
+            </Card>
+            <Card
+              icon={<SiVuedotjs size={CARD_ICON_SIZE} />}
+              link="https://vuejs.org"
+              heading="VueJS"
+            >
+              <Paragraph>
+                Described as the progressive Javascript framework, VueJS is an
+                approachable, performant and versatile framework for building
+                web applications.
               </Paragraph>
             </Card>
           </div>
@@ -228,17 +246,17 @@ const Index = (): React.ReactNode => {
             the <span className="font-semibold">D.I.R.T. Stack</span> to create
             awesome fullstack web applications.
           </Paragraph>
-          <ul className="max-w-2xl list-none mx-auto">
-            <li>
-              <Badge iconElement={<SiWindows />} text="Windows" />
-            </li>
-            <li>
-              <Badge iconElement={<SiApple />} text="MacOS" />
-            </li>
-            <li>
-              <Badge iconElement={<SiLinux />} text="Linux" />
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-3 text-white gap-8 md:gap-4">
+            <div className="flex flex-col items-center content-center">
+              <SiWindows size={ICON_SIZE_64} />
+            </div>
+            <div className="flex flex-col items-center content-center">
+              <SiApple size={ICON_SIZE_64} />
+            </div>
+            <div className="flex flex-col items-center content-center">
+              <SiLinux size={ICON_SIZE_64} />
+            </div>
+          </div>
         </div>
 
         <H2>Get Connected</H2>
@@ -249,17 +267,17 @@ const Index = (): React.ReactNode => {
         <div className="flex flex-col gap-y-2 sm:flex-row self-center sm:justify-between sm:w-full text-white">
           <FooterLink
             link="https://github.com/saiforceone/dirt-cli"
-            icon={<FaGithubAlt size={32} />}
+            icon={<FaGithubAlt size={ICON_SIZE_32} />}
             title="Git D.I.R.T-y"
           />
           <FooterLink
             link="https://discord.gg/sY3a5VN3y9"
-            icon={<FaDiscord size={32} />}
+            icon={<FaDiscord size={ICON_SIZE_32} />}
             title="Peanut Cart Express"
           />
           <FooterLink
             link="https://www.npmjs.com/package/@saiforceone/dirt-cli"
-            icon={<SiNpm size={32} />}
+            icon={<SiNpm size={ICON_SIZE_32} />}
             title="D.I.R.T. CLI"
           />
         </div>

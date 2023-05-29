@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import path, { resolve } from 'node:path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 
@@ -21,7 +21,10 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    alias: {
+      '~': path.resolve(__dirname, './dirt_fe_react/src'),
+    },
+    extensions: ['.js', '.json', 'ts', 'tsx'],
   },
   build: {
     outDir: resolve('./static/dist/js'),
